@@ -15,6 +15,16 @@ export type {
   ProductDetail,
   ProductVariant,
   ProductByHandleResponse,
+export { FEATURED_PRODUCTS_QUERY, FEATURED_COLLECTIONS_QUERY } from "./queries";
+  createCart,
+  getCart,
+  addToCart,
+  updateCartLine,
+  removeFromCart,
+  getUpsellProducts,
+} from "./cart";
+  ShopifyCart,
+  CartLineItem,
   FeaturedProductsResponse,
   FeaturedCollectionsResponse,
   AllCollectionsResponse,
