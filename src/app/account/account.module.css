@@ -1,0 +1,62 @@
+.page {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 1.5rem;
+}
+
+.container {
+  max-width: 28rem;
+  width: 100%;
+  text-align: center;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.75rem;
+  color: #111;
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.5;
+  margin: 0 0 2rem;
+}
+
+.error {
+  background: #fef2f2;
+  color: #991b1b;
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  margin-bottom: 1.5rem;
+}
+
+.actions {
+  margin-bottom: 1.5rem;
+}
+
+.button {
+  display: inline-block;
+  padding: 0.875rem 2.5rem;
+  background: #111;
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.button:hover {
+  background: #333;
+}
+
+.note {
+  font-size: 0.8125rem;
+  color: #888;
+}
