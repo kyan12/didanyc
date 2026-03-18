@@ -98,3 +98,57 @@ export interface AllProductsResponse {
     pageInfo: PageInfo;
   };
 }
+
+/* ─── Cart types ─── */
+
+export interface CartLineItem {
+  id: string;
+  quantity: number;
+  merchandise: {
+    id: string;
+    title: string;
+    image: ShopifyImage | null;
+    price: { amount: string; currencyCode: string };
+    product: {
+      id: string;
+      title: string;
+      handle: string;
+    };
+  };
+  cost: {
+    totalAmount: { amount: string; currencyCode: string };
+  };
+}
+
+export interface ShopifyCart {
+  id: string;
+  checkoutUrl: string;
+  totalQuantity: number;
+  cost: {
+    subtotalAmount: { amount: string; currencyCode: string };
+    totalAmount: { amount: string; currencyCode: string };
+  };
+  lines: {
+    edges: Array<{ node: CartLineItem }>;
+  };
+}
+
+export interface CartCreateResponse {
+  cartCreate: { cart: ShopifyCart };
+}
+
+export interface CartLinesAddResponse {
+  cartLinesAdd: { cart: ShopifyCart };
+}
+
+export interface CartLinesUpdateResponse {
+  cartLinesUpdate: { cart: ShopifyCart };
+}
+
+export interface CartLinesRemoveResponse {
+  cartLinesRemove: { cart: ShopifyCart };
+}
+
+export interface CartQueryResponse {
+  cart: ShopifyCart | null;
+}
