@@ -1,0 +1,286 @@
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+/* ─── Image Gallery ─── */
+
+.gallery {
+  position: sticky;
+  top: 2rem;
+}
+
+.mainImage {
+  position: relative;
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: 0.25rem;
+  background: #f5f5f5;
+}
+
+.image {
+  object-fit: cover;
+}
+
+.placeholder {
+  width: 100%;
+  height: 100%;
+  background: #eee;
+}
+
+.thumbnails {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+  overflow-x: auto;
+}
+
+.thumbnail {
+  position: relative;
+  width: 4.5rem;
+  height: 4.5rem;
+  flex-shrink: 0;
+  border: 1px solid #ddd;
+  border-radius: 0.25rem;
+  overflow: hidden;
+  cursor: pointer;
+  background: #f5f5f5;
+  padding: 0;
+  transition: border-color 0.15s ease;
+}
+
+.thumbnail:hover {
+  border-color: #888;
+}
+
+.thumbnailActive {
+  border-color: #111;
+}
+
+.thumbImage {
+  object-fit: cover;
+}
+
+/* ─── Product Info ─── */
+
+.info {
+  display: flex;
+  flex-direction: column;
+}
+
+.vendor {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #888;
+  margin: 0 0 0.5rem;
+}
+
+.title {
+  font-size: 1.75rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin: 0 0 1rem;
+}
+
+/* ─── Pricing ─── */
+
+.pricing {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  margin-bottom: 1.5rem;
+}
+
+.price {
+  font-size: 1.125rem;
+  color: #111;
+}
+
+.salePrice {
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: #111;
+}
+
+.compareAt {
+  font-size: 1rem;
+  color: #888;
+  text-decoration: line-through;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.125rem 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: #991b1b;
+  background: #fef2f2;
+  border-radius: 1rem;
+}
+
+/* ─── Variant Options ─── */
+
+.optionGroup {
+  margin-bottom: 1.25rem;
+}
+
+.optionLabel {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #555;
+  margin-bottom: 0.5rem;
+}
+
+.optionValue {
+  margin-left: 0.375rem;
+  color: #111;
+}
+
+.optionValues {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.optionButton {
+  position: relative;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  border: 1px solid #ddd;
+  border-radius: 0.25rem;
+  background: #fff;
+  color: #111;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease;
+  overflow: hidden;
+}
+
+.optionButton:hover:not(:disabled) {
+  border-color: #111;
+}
+
+.optionSelected {
+  border-color: #111;
+  background: #111;
+  color: #fff;
+}
+
+.optionSelected:hover {
+  background: #333;
+  border-color: #333;
+}
+
+.optionUnavailable {
+  color: #ccc;
+  border-color: #eee;
+  cursor: not-allowed;
+}
+
+.strikethrough {
+  position: absolute;
+  top: 50%;
+  left: -2px;
+  right: -2px;
+  height: 1px;
+  background: #ccc;
+  transform: rotate(-12deg);
+}
+
+/* ─── Add to Cart ─── */
+
+.addToCart {
+  width: 100%;
+  padding: 0.875rem 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border: none;
+  border-radius: 0.25rem;
+  background: #111;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.15s ease;
+  margin-top: 0.5rem;
+}
+
+.addToCart:hover:not(:disabled) {
+  background: #333;
+}
+
+.addToCart:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.successMessage {
+  font-size: 0.875rem;
+  color: #15803d;
+  margin: 0.75rem 0 0;
+  text-align: center;
+}
+
+.errorMessage {
+  font-size: 0.875rem;
+  color: #991b1b;
+  margin: 0.75rem 0 0;
+  text-align: center;
+}
+
+/* ─── Description ─── */
+
+.description {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid #eee;
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  color: #333;
+}
+
+.description h2,
+.description h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 1.5rem 0 0.5rem;
+}
+
+.description p {
+  margin: 0 0 1rem;
+}
+
+.description ul,
+.description ol {
+  padding-left: 1.25rem;
+  margin: 0 0 1rem;
+}
+
+.description li {
+  margin-bottom: 0.25rem;
+}
+
+/* ─── Responsive ─── */
+
+@media (max-width: 768px) {
+  .layout {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .gallery {
+    position: static;
+  }
+
+  .title {
+    font-size: 1.375rem;
+  }
+}

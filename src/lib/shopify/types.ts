@@ -99,6 +99,50 @@ export interface AllProductsResponse {
   };
 }
 
+/* ─── Product detail types (PDP) ─── */
+
+export interface ProductVariant {
+  id: string;
+  title: string;
+  availableForSale: boolean;
+  selectedOptions: Array<{ name: string; value: string }>;
+  price: { amount: string; currencyCode: string };
+  compareAtPrice: { amount: string; currencyCode: string } | null;
+  image: ShopifyImage | null;
+}
+
+export interface ProductDetail {
+  id: string;
+  title: string;
+  handle: string;
+  description: string;
+  descriptionHtml: string;
+  vendor: string;
+  productType: string;
+  tags: string[];
+  priceRange: {
+    minVariantPrice: { amount: string; currencyCode: string };
+  };
+  compareAtPriceRange: {
+    maxVariantPrice: { amount: string; currencyCode: string };
+  };
+  options: Array<{ name: string; values: string[] }>;
+  variants: {
+    edges: Array<{ node: ProductVariant }>;
+  };
+  images: {
+    edges: Array<{ node: ShopifyImage }>;
+  };
+  seo: {
+    title: string | null;
+    description: string | null;
+  };
+}
+
+export interface ProductByHandleResponse {
+  product: ProductDetail | null;
+}
+
 /* ─── Cart types ─── */
 
 export interface CartLineItem {
