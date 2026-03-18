@@ -49,9 +49,10 @@ export async function POST(request: NextRequest) {
     revalidatePath(`/products/${payload.handle}`);
   }
 
-  // Always revalidate collections and home page — product/inventory changes
+  // Always revalidate listing pages — product/inventory changes
   // can affect any listing page
   revalidatePath("/collections", "layout");
+  revalidatePath("/products", "layout");
   revalidatePath("/", "layout");
 
   console.log("[shopify-webhook] Revalidation triggered", { topic });
