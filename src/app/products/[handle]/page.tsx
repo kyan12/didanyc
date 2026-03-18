@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { notFound } from "next/navigation";
 import {
   shopifyFetch,
@@ -97,7 +98,9 @@ export default async function ProductPage({
 
   return (
     <main className={styles.main}>
-      <ProductDetail product={product} />
+      <Suspense>
+        <ProductDetail product={product} />
+      </Suspense>
     </main>
   );
 }
