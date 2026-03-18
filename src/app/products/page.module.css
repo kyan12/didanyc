@@ -1,0 +1,35 @@
+.section {
+  padding: 0 1.5rem 4rem;
+  max-width: 72rem;
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.empty {
+  text-align: center;
+  color: #888;
+  font-size: 1rem;
+  padding: 2rem 0;
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding: 0 1rem 3rem;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+}
