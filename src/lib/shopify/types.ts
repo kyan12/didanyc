@@ -11,21 +11,24 @@ export interface ShopifyProduct {
   handle: string;
   description: string;
   priceRange: {
-    minVariantPrice: {
-      amount: string;
-      currencyCode: string;
-    };
+    minVariantPrice: { amount: string; currencyCode: string };
+  };
   compareAtPriceRange: {
-    maxVariantPrice: {
+    maxVariantPrice: { amount: string; currencyCode: string };
+  };
   variants: {
-    edges: Array<{
-      node: {
-    }>;
+    edges: Array<{ node: { id: string; title: string; availableForSale: boolean } }>;
+  };
   images: {
-      node: ShopifyImage;
+    edges: Array<{ node: ShopifyImage }>;
+  };
 }
 
 export interface ShopifyCollection {
+  id: string;
+  title: string;
+  handle: string;
+  description: string;
   image: ShopifyImage | null;
 }
 
@@ -36,48 +39,80 @@ export interface PageInfo {
 
 export interface FeaturedProductsResponse {
   products: {
-      node: ShopifyProduct;
+    edges: Array<{ node: ShopifyProduct }>;
+  };
 }
 
 export interface FeaturedCollectionsResponse {
   collections: {
-      node: ShopifyCollection;
+    edges: Array<{ node: ShopifyCollection }>;
+  };
 }
 
 export interface AllCollectionsResponse {
+  collections: {
+    edges: Array<{ node: ShopifyCollection }>;
     pageInfo: PageInfo;
+  };
 }
 
 export interface CollectionByHandleResponse {
   collection: {
+    id: string;
+    title: string;
+    handle: string;
+    description: string;
+    image: ShopifyImage | null;
+    products: {
+      edges: Array<{ node: ShopifyProduct }>;
+      pageInfo: PageInfo;
+    };
   } | null;
 }
 
 export interface AllProductsResponse {
+  products: {
+    edges: Array<{ node: ShopifyProduct }>;
+    pageInfo: PageInfo;
+  };
 }
 
 /* ─── Product detail types (PDP) ─── */
 
 export interface ProductVariant {
+  id: string;
+  title: string;
   availableForSale: boolean;
   selectedOptions: Array<{ name: string; value: string }>;
   price: { amount: string; currencyCode: string };
   compareAtPrice: { amount: string; currencyCode: string } | null;
+  image: ShopifyImage | null;
 }
 
 export interface ProductDetail {
+  id: string;
+  title: string;
+  handle: string;
+  description: string;
   descriptionHtml: string;
   vendor: string;
   productType: string;
   tags: string[];
+  priceRange: {
     minVariantPrice: { amount: string; currencyCode: string };
     maxVariantPrice: { amount: string; currencyCode: string };
+  };
   options: Array<{ name: string; values: string[] }>;
+  variants: {
     edges: Array<{ node: ProductVariant }>;
+  };
+  images: {
     edges: Array<{ node: ShopifyImage }>;
+  };
   seo: {
     title: string | null;
     description: string | null;
+  };
 }
 
 export interface ProductByHandleResponse {
@@ -87,19 +122,38 @@ export interface ProductByHandleResponse {
 /* ─── Cart types ─── */
 
 export interface CartLineItem {
+  id: string;
   quantity: number;
   merchandise: {
+    id: string;
+    title: string;
     product: {
+      id: string;
+      title: string;
+      handle: string;
+    };
+    image: ShopifyImage | null;
+    price: { amount: string; currencyCode: string };
+    selectedOptions: Array<{ name: string; value: string }>;
+  };
   cost: {
     totalAmount: { amount: string; currencyCode: string };
+  };
 }
 
 export interface ShopifyCart {
+  id: string;
   checkoutUrl: string;
   totalQuantity: number;
+  subtotalAmount: { amount: string; currencyCode: string };
+  cost: {
     subtotalAmount: { amount: string; currencyCode: string };
+    totalAmount: { amount: string; currencyCode: string };
+    totalTaxAmount: { amount: string; currencyCode: string } | null;
+  };
   lines: {
     edges: Array<{ node: CartLineItem }>;
+  };
 }
 
 export interface CartCreateResponse {
