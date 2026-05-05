@@ -1,0 +1,121 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  background: var(--color-black);
+  border-bottom: 1px solid var(--border);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+  height: 4rem;
+}
+
+.logo {
+  font-size: var(--text-sm);
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  flex-shrink: 0;
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+.logo:hover {
+  color: var(--accent-hover);
+}
+
+/* ── Desktop Nav ─────────────────────────────────────────────────────── */
+.nav {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+}
+
+.navLink {
+  font-size: var(--text-xs);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+.navLink:hover {
+  color: var(--fg);
+}
+
+/* ── Actions ─────────────────────────────────────────────────────────── */
+.actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+/* ── Hamburger ───────────────────────────────────────────────────────── */
+.menuToggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 2.5rem;
+  height: 2.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.bar {
+  display: block;
+  width: 18px;
+  height: 1.5px;
+  background: var(--fg);
+  transition: transform var(--transition), opacity var(--transition);
+  transform-origin: center;
+}
+
+/* ── Mobile ──────────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .menuToggle {
+    display: flex;
+  }
+
+  .nav {
+    display: none;
+    position: fixed;
+    top: 4rem;
+    left: 0;
+    right: 0;
+    background: var(--color-black);
+    border-bottom: 1px solid var(--border);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    padding: var(--space-6) var(--gutter);
+  }
+
+  .navOpen {
+    display: flex;
+  }
+
+  .navLink {
+    display: block;
+    width: 100%;
+    padding: var(--space-4) 0;
+    font-size: var(--text-sm);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .navLink:last-child {
+    border-bottom: none;
+  }
+}

@@ -3,45 +3,50 @@ import { PageHero } from "@/components/PageHero";
 import { RichText } from "@/components/RichText";
 
 export const metadata: Metadata = {
-  title: "About — DIDA NYC",
-  description: "The story behind DIDA NYC — premium haircare rooted in heritage.",
+  title: "About",
+  description:
+    "The story behind DIDA NYC — premium men's hair care built on barber-grade performance, a proprietary scent, and a clean finish.",
 };
 
 const heroData = {
-  title: "Our Story",
+  title: "Built in NYC. Trusted in the Chair.",
   subtitle:
-    "DIDA NYC was born from a belief that haircare should honor every texture, every curl, every coil — without compromise.",
+    "DIDA NYC was created for men who care about how they look — and how they smell.",
 };
 
 const bodyHtml = `
-<h2>Rooted in Heritage</h2>
+<h2>Where It Started</h2>
 <p>
-  Growing up in New York City, our founder experienced firsthand how difficult
-  it was to find haircare products that truly worked for textured hair. The
-  options were either loaded with harsh chemicals or simply didn't deliver
-  results. DIDA NYC was created to change that.
+  Men deserved better. Not just better products — a better experience. Something
+  that performed like the professionals used, smelled like it was made for them,
+  and didn't leave buildup in their hair. DIDA NYC was built to be that brand.
+  Rooted in New York City, distributed through barber shops, and formulated to
+  actually work.
 </p>
 
-<h2>Our Philosophy</h2>
+<h2>The Full Routine, One Scent</h2>
 <p>
-  We believe that what you put on your hair matters just as much as what you
-  put in your body. Every DIDA NYC formula is crafted with carefully sourced
-  natural ingredients — no sulfates, no parabens, no silicones. Just clean,
-  effective haircare that lets your natural beauty shine.
+  Most grooming brands pick one format and stop there. DIDA NYC covers the full
+  routine — shampoo, leave-in conditioner, matte pomade, semi-gloss pomade, and
+  styling powder — connected by a single proprietary scent signature. When a man
+  discovers the scent, he recognizes every product in the line. That's
+  intentional.
 </p>
 
-<h2>Made in New York</h2>
+<h2>Barber-Grade Performance</h2>
 <p>
-  From our studio in Brooklyn, we develop, test, and refine every product
-  in-house. Each batch is small enough to ensure quality and large enough to
-  share with a growing community of people who refuse to settle for less.
+  Our products are stocked and recommended in barbershops because they perform
+  at the level barbers expect. Strong hold that washes out clean. No buildup,
+  no residue, no harsh ingredients that damage hair over time. When a barber
+  puts their name behind a product, the product has to deliver.
 </p>
 
-<h2>Our Promise</h2>
+<h2>NYC Roots. Community Purpose.</h2>
 <p>
-  We're committed to transparency, sustainability, and results. Every
-  ingredient is listed, every claim is backed, and every product is made to
-  make a real difference in your hair routine.
+  DIDA NYC was born in New York City — premium, urban, and built for real use.
+  We believe quality and purpose go together. A portion of every purchase goes
+  to charity, because the brand you choose should stand for something beyond
+  the shelf.
 </p>
 `;
 

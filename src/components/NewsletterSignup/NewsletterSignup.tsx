@@ -18,10 +18,9 @@ export function NewsletterSignup() {
   return (
     <section className={styles.section}>
       <div className={styles.inner}>
-        <h2 className={styles.heading}>Join the DIDA Community</h2>
+        <h2 className={styles.heading}>Stay in the Loop</h2>
         <p className={styles.description}>
-          Be the first to know about new products, exclusive offers, and haircare
-          tips.
+          New products, restocks, and early access — delivered directly.
         </p>
         {status === "success" ? (
           <p className={styles.success}>Thank you for subscribing!</p>

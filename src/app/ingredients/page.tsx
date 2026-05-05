@@ -4,9 +4,9 @@ import { IngredientCard } from "@/components/IngredientCard";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
-  title: "Ingredients — DIDA NYC",
+  title: "Ingredients",
   description:
-    "Explore the natural ingredients behind every DIDA NYC product.",
+    "Clean formulation, real performance. Every DIDA NYC ingredient is chosen to deliver barber-grade results without buildup or harsh residue.",
 };
 
 interface Ingredient {
@@ -18,34 +18,34 @@ interface Ingredient {
 
 const ingredients: Ingredient[] = [
   {
-    title: "Shea Butter",
+    title: "Kaolin Clay",
     description:
-      "Rich in vitamins A and E, shea butter deeply moisturizes and seals in hydration without weighing hair down.",
+      "The matte hold foundation in our pomades. Absorbs excess oil, adds texture, and creates clean separation without making hair stiff or brittle.",
   },
   {
-    title: "Jamaican Black Castor Oil",
+    title: "Beeswax",
     description:
-      "Cold-pressed and unrefined, this oil strengthens strands from root to tip and supports healthy hair growth.",
+      "Natural wax that gives our pomades their hold and workability. Provides structure without flaking and keeps the style in place through the day.",
   },
   {
-    title: "Aloe Vera",
+    title: "Castor Oil",
     description:
-      "A natural conditioner that soothes the scalp, reduces dandruff, and adds a lightweight shine.",
+      "A thick conditioning oil that supports scalp health and adds slip to our leave-in conditioner. Balances the hold agents in our styling products.",
   },
   {
-    title: "Coconut Oil",
+    title: "Argan Oil",
     description:
-      "Penetrates the hair shaft to reduce protein loss, leaving hair stronger and more resilient.",
+      "Lightweight and non-greasy. Adds shine control in our semi-gloss pomade and softens hair in the shampoo and leave-in formulas without heaviness.",
   },
   {
-    title: "Avocado Oil",
+    title: "Provitamin B5",
     description:
-      "Loaded with oleic acid and monounsaturated fats, it nourishes dry and brittle hair back to life.",
+      "Penetrates the hair shaft to improve moisture retention and reduce breakage. Keeps hair resilient across the full routine from shampoo to styler.",
   },
   {
-    title: "Tea Tree Oil",
+    title: "Rice Starch",
     description:
-      "A powerful antimicrobial that keeps the scalp clean and healthy while promoting natural growth.",
+      "The key texture agent in our Styling Powder. Absorbs oil at the root, adds volume and grip, and delivers the invisible-product finish men expect.",
   },
 ];
 
@@ -53,8 +53,8 @@ export default function IngredientsPage() {
   return (
     <main>
       <PageHero
-        title="Our Ingredients"
-        subtitle="We source the finest natural ingredients — each one chosen for a reason."
+        title="What's Inside"
+        subtitle="Clean formulation, real performance. No buildup, no harsh residue — every ingredient earns its place."
       />
       <section className={styles.grid}>
         {ingredients.map((ingredient) => (
