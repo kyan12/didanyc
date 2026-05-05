@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { Hero } from "@/components/Hero";
 import { FeaturedCollections } from "@/components/FeaturedCollections";
 import { FeaturedProducts } from "@/components/FeaturedProducts";
@@ -12,6 +13,12 @@ import type {
   FeaturedProductsResponse,
   FeaturedCollectionsResponse,
 } from "@/lib/shopify";
+
+export const metadata: Metadata = {
+  title: "DIDA NYC — Barber-Grade Men's Hair Care",
+  description:
+    "Premium men's hair care built on barber-grade performance, a proprietary scent signature, and a clean finish. Shampoo, pomades, and styling from DIDA NYC.",
+};
 
 export const revalidate = 60;
 
@@ -48,12 +55,12 @@ export default async function Home() {
   return (
     <main>
       <Hero
-        title="Rooted in Heritage, Made for You"
-        subtitle="Premium haircare crafted with natural ingredients for textured hair."
+        title="Barber-Grade. Clean Finish."
+        subtitle="The complete men's hair routine — built for performance, defined by scent."
         ctaText="Shop Now"
         ctaHref="/collections"
         imageUrl="/images/hero.jpg"
-        imageAlt="DIDA NYC haircare products"
+        imageAlt="DIDA NYC men's hair care products"
       />
 
       {collections.length > 0 && (
@@ -63,20 +70,20 @@ export default async function Home() {
       {products.length > 0 && <FeaturedProducts products={products} />}
 
       <EditorialBlock
-        title="Crafted with Care"
-        body="Every DIDA NYC product is formulated with natural, ethically sourced ingredients. We believe in the power of nature to nourish and transform textured hair — without harsh chemicals or sulfates."
-        imageUrl="/images/editorial-ingredients.jpg"
-        imageAlt="Natural ingredients used in DIDA NYC products"
-        ctaText="Our Ingredients"
-        ctaHref="/ingredients"
+        title="Five Products. One Routine."
+        body="From daily cleanse to final style — DIDA NYC covers the full routine with a single scent signature across every product. Shampoo, leave-in conditioner, matte pomade, semi-gloss pomade, and styling powder. No buildup. Washes out clean. Barber-grade hold."
+        imageUrl="/images/editorial-products.jpg"
+        imageAlt="DIDA NYC five-product routine"
+        ctaText="See All Products"
+        ctaHref="/products"
       />
 
       <EditorialBlock
-        title="Our Story"
-        body="Born in New York City, DIDA NYC draws inspiration from Caribbean and African haircare traditions passed down through generations. We're building a brand that honors heritage while embracing modern science."
-        imageUrl="/images/editorial-story.jpg"
-        imageAlt="DIDA NYC brand story"
-        ctaText="Learn More"
+        title="The Barber's Recommendation You Can Bring Home."
+        body="DIDA NYC is stocked in barbershops because barbers trust it. The scent is proprietary, the performance is real, and the clean finish keeps clients coming back. A portion of every purchase goes to charity."
+        imageUrl="/images/editorial-barber.jpg"
+        imageAlt="DIDA NYC in the barbershop"
+        ctaText="Our Story"
         ctaHref="/about"
         reverse
       />

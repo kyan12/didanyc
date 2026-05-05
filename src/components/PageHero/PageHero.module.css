@@ -31,7 +31,7 @@
 
 .subtitle {
   font-size: 1.125rem;
-  color: #555;
+  color: var(--fg-muted);
   line-height: 1.6;
   margin: 0;
 }
